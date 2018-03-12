@@ -425,7 +425,7 @@ metricbeat.modules:
 
 #-------------------------------- Redis Module -------------------------------
 - module: redis
-  metricsets: ["info", "keyspace"]
+  metricsets: ["info", "keyspace", "length"]
   period: 10s
 
   # Redis hosts
@@ -435,6 +435,8 @@ metricbeat.modules:
   # Timeout is by default defined as period, as a fetch of a metricset
   # should never take longer then period, as otherwise calls can pile up.
   #timeout: 1s
+
+  length_target_keys: ['celery']
 
   # Optional fields to be added to each event
   #fields:

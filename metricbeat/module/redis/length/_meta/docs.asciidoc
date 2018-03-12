@@ -1,0 +1,2 @@
+The Redis `length` metricset collects length of redis list..
+The length is fetched from the https://redis.io/commands/LLEN command.

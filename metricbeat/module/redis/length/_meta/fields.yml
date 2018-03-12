@@ -1,0 +1,15 @@
+- name: length
+  type: group
+  description: >
+    `length` contains the length of value returned by the `LLEN` command.
+  release: ga
+  fields:
+    - name: key
+      type: keyword
+      description: >
+        key of redis.
+
+    - name: length
+      type: long
+      description: >
+        legnth of value.

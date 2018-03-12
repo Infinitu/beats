@@ -9845,6 +9845,29 @@ type: long
 
 
 
+[float]
+== length fields
+
+`length` contains the length of value returned by the `LLEN` command.
+
+
+
+[float]
+=== `redis.length.key`
+
+type: keyword
+
+key of redis.
+
+
+[float]
+=== `redis.length.length`
+
+type: long
+
+legnth of value.
+
+
 [[exported-fields-system]]
 == System fields
 

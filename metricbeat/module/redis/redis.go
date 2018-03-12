@@ -48,6 +48,18 @@ func FetchRedisInfo(stat string, c rd.Conn) (map[string]string, error) {
 	return ParseRedisInfo(out), nil
 }
 
+// FetchLength returns a ma of requested key.
+func FetchLength(key string, c rd.Conn) (int, error) {
+	defer c.Close()
+
+	out, err := rd.Int(c.Do("LLEN", key))
+	if err != nil {
+		logp.Err("Error retrieving LLEN stats: %v", err)
+		return -1, err
+	}
+	return out, nil
+}
+
 // CreatePool creates a redis connection pool
 func CreatePool(
 	host, password, network string,
